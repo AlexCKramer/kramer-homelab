@@ -1,0 +1,97 @@
+- 🏠 HARDWARE (Nodes):
+    - Mothership GUI:
+        icon: proxmox
+        href: https://192.168.42.5:8006
+        description: Primary Proxmox Node
+        widget:
+          type: proxmox
+          url: https://192.168.42.5:8006
+          username: root@pam!homepage
+          password: '{{HOMEPAGE_VAR_PROXMOX_PASSWORD}}'
+          node: Mothership
+          ignoreTlsErrors: true
+    - Holodeck GUI:
+        icon: proxmox
+        href: https://192.168.42.8:8006
+        description: Secondary Proxmox Node
+        widget:
+          type: proxmox
+          url: https://192.168.42.8:8006
+          username: root@pam!homepage
+          password: '{{HOMEPAGE_VAR_PROXMOX_PASSWORD}}'
+          node: HOLODECK
+          ignoreTlsErrors: true
+    - Backup Server:
+        icon: proxmox
+        href: https://192.168.42.8:8007
+        description: Proxmox Backup Server (PBS)
+        widget:
+          type: proxmoxbackupserver
+          url: https://192.168.42.8:8007
+          username: root@pam!homepage
+          password: '{{HOMEPAGE_VAR_PBS_PASSWORD}}'
+          ignoreTlsErrors: true
+
+- ⚙️ CORE SERVICES (The Brain):
+    - Lab Runbook:
+        icon: mkdocs
+        href: http://192.168.42.42:8000
+        description: Infrastructure-as-Code Wiki
+        server: local
+        container: mkdocs_runbook
+    - Grafana:
+        icon: grafana
+        href: http://192.168.42.42:3030
+        description: Metrics & Dashboards
+        server: local
+        container: grafana
+    - Prometheus:
+        icon: prometheus
+        href: http://192.168.42.42:9090
+        description: Time-Series Database
+        server: local
+        container: prometheus
+    - Portainer:
+        icon: portainer
+        href: https://192.168.42.42:9443
+        description: Container Management
+        server: local
+        container: portainer
+
+- 🎮 GAME FLEET (Linux VM):
+    - 7 Days Server:
+        icon: 7days.png
+        href: http://192.168.42.41:8080
+        description: Palapagos Island
+        server: gameserver
+        container: 7dtdserver
+        widget:
+          type: gamedig
+          serverType: 7d2d
+          url: udp://192.168.42.41:26900
+    - Enshrouded:
+        icon: enshrouded.png
+        href: http://192.168.42.41:15637
+        description: Enshrouded Dedicated
+        server: gameserver
+        container: enshrouded
+    - Palworld:
+        icon: palworld.png
+        href: http://192.168.42.41:8211
+        description: Palworld Dedicated
+        server: gameserver
+        container: palworld-server
+        widget:
+          type: gamedig
+          serverType: palworld
+          url: udp://192.168.42.41:8211
+
+- 🚀 ESCAPE POD (RasPi):
+    - Pi-Hole:
+        icon: pihole
+        href: http://192.168.42.15 # Replace with actual RasPi IP
+        description: Network DNS
+    - OctoPrint:
+        icon: octoprint
+        href: http://192.168.42.15:5000 # Replace with actual RasPi IP
+        description: 3D Printer Control

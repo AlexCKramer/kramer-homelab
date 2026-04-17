@@ -1,0 +1,13 @@
+# Environments & Secrets
+**/.env
+
+# Logs
+**/logs/
+**/*.log
+
+# Databases & State
+**/redis/data/
+**/*.rdb
+
+# MkDocs compiled site
+**/site/

@@ -1,0 +1,13 @@
+services:
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      # This socket mount is what allows Watchtower to "see" your other containers
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      # Automatically delete the old, outdated images so your hard drive doesn't fill up
+      - WATCHTOWER_CLEANUP=true
+      # Check for updates once every 24 hours (86400 seconds)
+      - WATCHTOWER_POLL_INTERVAL=86400
+    restart: unless-stopped

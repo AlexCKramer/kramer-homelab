@@ -1,0 +1,12 @@
+services:
+  mkdocs:
+    image: squidfunk/mkdocs-material:latest
+    container_name: mkdocs_runbook
+    ports:
+      - 8000:8000
+    volumes:
+      - /home/alex/docker/mkdocs:/docs:delegated
+    environment:
+      - WATCHDOG_FORCE_POLLING=true
+    command: serve --dev-addr 0.0.0.0:8000 --livereload
+    restart: unless-stopped

@@ -1,0 +1,33 @@
+---
+- name: Baseline Security & Maintenance
+  hosts: debian_vms
+  become: yes
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install unattended-upgrades and UFW
+      apt:
+        name:
+          - unattended-upgrades
+          - ufw
+        state: present
+
+    - name: Ensure unattended-upgrades service is running
+      service:
+        name: unattended-upgrades
+        state: started
+        enabled: yes
+
+    - name: Ensure SSH is always allowed (Anti-Lockout)
+      ufw:
+        rule: allow
+        name: OpenSSH
+
+    # SRE SAFETY HOLD: 
+    # We are installing UFW, but we are intentionally NOT enabling it yet.
+    # Enabling a default firewall right now would instantly sever Homepage's 
+    # connection to your Docker proxies and block Palworld/7DTD from the internet!

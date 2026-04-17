@@ -1,0 +1,14 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/widgets/
+
+- glances:
+    url: http://192.168.42.42:61208
+    version: 4
+    cpu: true
+    mem: true
+    uptime: true
+
+- search:
+    provider: duckduckgo
+    target: _blank

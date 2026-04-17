@@ -1,0 +1,6 @@
+local:
+  socket: /var/run/docker.sock
+
+gameserver:
+  host: 192.168.42.41
+  port: 2375
