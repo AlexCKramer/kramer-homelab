@@ -25,10 +25,10 @@
     * [x] **Live-Fire Restoration:** Back it up to `HOLODECK` via PBS, delete the VM, and time how long it takes to restore it to a fully functional state.
     * [x] **Write the Post-Mortem:** Document the recovery time and any issues encountered in your MkDocs wiki.
 
-* [ ] **Phase 6: The Public Portfolio (GitHub)**
-    * [ ] **Scrub the Git History:** Ensure no sensitive webhooks, IPs, or `.env` files are tracked.
-    * [ ] **Write the README:** Create a professional `README.md` explaining the architecture and your SRE goals to hiring managers.
-    * [ ] **Push to Public Repo:** Upload the code to GitHub so it can be linked on your resume.
+* [x] **Phase 6: The Public Portfolio (GitHub)**
+    * [x] **Scrub the Git History:** Ensure no sensitive webhooks, IPs, or `.env` files are tracked.
+    * [x] **Write the README:** Create a professional `README.md` explaining the architecture and your SRE goals to hiring managers.
+    * [x] **Push to Public Repo:** Upload the code to GitHub so it can be linked on your resume.
 
 * [ ] **Phase 7: The Routing Layer (Internal DNS & Reverse Proxy)**
     * [ ] **Deploy Internal DNS:** Spin up Pi-hole or AdGuard Home to handle `.local` domain resolution.
