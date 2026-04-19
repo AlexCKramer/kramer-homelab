@@ -1,0 +1,16 @@
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      # We are moving the web UI to 8080 so Traefik can have Port 80 later
+      - "8080:80/tcp" 
+    environment:
+      TZ: 'America/New_York'
+      FTLCONF_webserver_api_password: ${PIHOLE_WEBPASSWORD}
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc-dnsmasq.d:/etc/dnsmasq.d'
+    restart: unless-stopped
