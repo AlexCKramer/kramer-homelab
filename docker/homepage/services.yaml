@@ -86,12 +86,12 @@
           serverType: palworld
           url: udp://192.168.42.41:8211
 
-- 🚀 ESCAPE POD (RasPi):
-    - Pi-Hole:
-        icon: pihole
-        href: http://192.168.42.15 # Replace with actual RasPi IP
-        description: Network DNS
-    - OctoPrint:
-        icon: octoprint
-        href: http://192.168.42.15:5000 # Replace with actual RasPi IP
-        description: 3D Printer Control
+#- 🚀 ESCAPE POD (RasPi):
+#    - Pi-Hole:
+#        icon: pihole
+#        href: http://192.168.42.15 # Replace with actual RasPi IP
+#        description: Network DNS
+#    - OctoPrint:
+#        icon: octoprint
+#        href: http://192.168.42.15:5000 # Replace with actual RasPi IP
+#        description: 3D Printer Control

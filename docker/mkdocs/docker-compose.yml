@@ -1,12 +1,21 @@
 services:
   mkdocs:
-    image: squidfunk/mkdocs-material:latest
-    container_name: mkdocs_runbook
-    ports:
-      - 8000:8000
+    container_name: mkdocs
+    image: squidfunk/mkdocs-material
+    command: serve --dev-addr=0.0.0.0:8000
     volumes:
-      - /home/alex/docker/mkdocs:/docs:delegated
-    environment:
-      - WATCHDOG_FORCE_POLLING=true
-    command: serve --dev-addr 0.0.0.0:8000 --livereload
+      # FIX: Go up two directories to the kramer-homelab root
+      - /home/alex/kramer-homelab/docker/mkdocs/:/docs
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.wiki.rule=Host(`wiki.kramer.local`)"
+      - "traefik.http.routers.wiki.entrypoints=web"
+      - "traefik.http.services.wiki.loadbalancer.server.port=8000"
+      - "traefik.docker.network=proxy"
     restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
