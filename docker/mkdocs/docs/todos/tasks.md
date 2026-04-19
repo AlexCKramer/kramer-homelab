@@ -30,10 +30,10 @@
     * [x] **Write the README:** Create a professional `README.md` explaining the architecture and your SRE goals to hiring managers.
     * [x] **Push to Public Repo:** Upload the code to GitHub so it can be linked on your resume.
 
-* [ ] **Phase 7: The Routing Layer (Internal DNS & Reverse Proxy)**
-    * [ ] **Deploy Internal DNS:** Spin up Pi-hole or AdGuard Home to handle `.local` domain resolution.
-    * [ ] **Deploy Reverse Proxy:** Install Nginx Proxy Manager or Traefik.
-    * [ ] **Route the Lab:** Map IPs like `192.168.42.42:8000` to clean URLs like `wiki.kramer.local`.
+* [x] **Phase 7: The Routing Layer (Internal DNS & Reverse Proxy)**
+    * [x] **Deploy Internal DNS:** Spin up Pi-hole or AdGuard Home to handle `.local` domain resolution.
+    * [x] **Deploy Reverse Proxy:** Install Nginx Proxy Manager or Traefik.
+    * [x] **Route the Lab:** Map IPs like `192.168.42.42:8000` to clean URLs like `wiki.kramer.local`.
 
 * [ ] **Phase 8: Identity & Access (Single Sign-On)**
     * [ ] **Deploy SSO Provider:** Spin up Authelia or Authentik.
