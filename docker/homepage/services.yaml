@@ -35,13 +35,13 @@
 - ⚙️ CORE SERVICES (The Brain):
     - Lab Runbook:
         icon: mkdocs
-        href: http://192.168.42.42:8000
+        href: http://wiki.kramer.local/
         description: Infrastructure-as-Code Wiki
         server: local
-        container: mkdocs_runbook
+        container: mkdocs
     - Grafana:
         icon: grafana
-        href: http://192.168.42.42:3030
+        href: http://grafana.kramer.local
         description: Metrics & Dashboards
         server: local
         container: grafana

@@ -7,11 +7,23 @@ services:
     user: "1000:1000"
     group_add:
       - "996"
-    ports:
-      - 3000:3000
+    # REMOVED the ports section to force traffic through Traefik
     environment:
-      - HOMEPAGE_ALLOWED_HOSTS=192.168.42.42,192.168.42.42:3000
+      # ADDED the new custom domain to the allowed hosts list
+      - HOMEPAGE_ALLOWED_HOSTS=192.168.42.42,192.168.42.42:3000,homepage.kramer.local
     volumes:
       - ./:/app/config 
       - /var/run/docker.sock:/var/run/docker.sock:ro 
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.homepage.rule=Host(`homepage.kramer.local`)"
+      - "traefik.http.routers.homepage.entrypoints=web"
+      - "traefik.http.services.homepage.loadbalancer.server.port=3000"
+      - "traefik.docker.network=proxy"
     restart: unless-stopped
+
+networks:
+  proxy:
+    external: true

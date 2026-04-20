@@ -2,6 +2,7 @@ services:
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
+    # Leaving ports intact so you can access raw metrics at 192.168.42.42:9090
     ports:
       - 9090:9090
     volumes:
@@ -11,8 +12,28 @@ services:
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
-    ports:
-      - 3030:3000
     environment:
-      - GF_SECURITY_ADMIN_PASSWORD=admin # We will change this on first login
+      # This is only used on the VERY FIRST boot.
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      # This saves your dashboards, settings, and passwords permanently
+      - grafana-data:/var/lib/grafana
+    networks:
+      - proxy
+      - default
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.grafana.rule=Host(`grafana.kramer.local`)"
+      - "traefik.http.routers.grafana.entrypoints=web"
+      - "traefik.http.services.grafana.loadbalancer.server.port=3000"
+      - "traefik.docker.network=proxy"
     restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
+  default:
+
+# Declare the persistent volume
+volumes:
+  grafana-data:
