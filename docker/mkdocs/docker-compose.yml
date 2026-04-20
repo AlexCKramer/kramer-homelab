@@ -2,9 +2,12 @@ services:
   mkdocs:
     container_name: mkdocs
     image: squidfunk/mkdocs-material
-    command: serve --dev-addr=0.0.0.0:8000
+    # Added --livereload back
+    command: serve --dev-addr=0.0.0.0:8000 --livereload
+    # Added the environment block back
+    environment:
+      - WATCHDOG_FORCE_POLLING=true
     volumes:
-      # FIX: Go up two directories to the kramer-homelab root
       - /home/alex/kramer-homelab/docker/mkdocs/:/docs
     networks:
       - proxy
