@@ -39,14 +39,14 @@
     * [ ] **Deploy SSO Provider:** Spin up Authelia or Authentik.
     * [ ] **Integrate with Proxy:** Lock your web dashboards behind the SSO portal utilizing your Bitwarden credentials and 2FA.
 
-- [ ] **Phase 9: The GRC Simulation (Vulnerability Scanning)**
-  - Deploy the Scanner: Install Wazuh or Greenbone (OpenVAS).
-  - Execute the Audit: Run a credentialed vulnerability scan against `Command-Deck` or `Infra-Services`.
-  - Generate the Artifact: Export the PDF report showing vulnerabilities (e.g., Outdated SSH, missing patches).
-  - Write the Mitigation Post-Mortem: Document in MkDocs exactly how you mitigated those risks using your Ansible playbooks.
+* [ ] **Phase 9: The GRC Simulation (Vulnerability Scanning)**
+  * [ ] **Deploy the Scanner:** Install Wazuh or Greenbone (OpenVAS).
+  * [ ] **Execute the Audit:** Run a credentialed vulnerability scan against `Command-Deck` or `Infra-Services`.
+  * [ ] **Generate the Artifact:** Export the PDF report showing vulnerabilities (e.g., Outdated SSH, missing patches).
+  * [ ] **Write the Mitigation Post-Mortem:** Document in MkDocs exactly how you mitigated those risks using your Ansible playbooks.
 
-- [ ] **Phase 10: Application Orchestration (Game Server Control Plane)**
-  - Deploy the Control Plane: Install Pterodactyl Panel (or PufferPanel) on `Infra-Services` to act as the central web UI and database.
-  - Deploy the Worker Node: Install the `Wings` daemon on your `LinuxGame` VM to securely execute the containerized game servers.
-  - Containerize a Workload: Migrate an existing game server into the panel, establishing strict resource limits (CPU/RAM cgroups).
-  - Configure Automation: Schedule automated local backups and routine server restarts directly through the panel's cron interface.
+* [ ] **Phase 10: Application Orchestration (Game Server Control Plane)**
+  * [ ] **Deploy the Control Plane:** Install Pterodactyl Panel (or PufferPanel) on `Infra-Services` to act as the central web UI and database.
+  * [ ] **Deploy the Worker Node:** Install the `Wings` daemon on your `LinuxGame` VM to securely execute the containerized game servers.
+  * [ ] **Containerize a Workload:** Migrate an existing game server into the panel, establishing strict resource limits (CPU/RAM cgroups).
+  * [ ] **Configure Automation:** Schedule automated local backups and routine server restarts directly through the panel's cron interface.
