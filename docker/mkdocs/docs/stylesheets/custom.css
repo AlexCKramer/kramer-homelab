@@ -1,0 +1,16 @@
+/* Lock the documentation grid to a standard 1080p desktop width */
+.md-grid {
+  max-width: 1400px;
+}
+
+/* Improve readability and line spacing */
+body {
+  line-height: 1.6;
+}
+
+/* 4K Monitor Detection: Automatically scale up text for screen-sharing */
+@media screen and (min-width: 2560px) {
+  body {
+    font-size: 115%;
+  }
+}

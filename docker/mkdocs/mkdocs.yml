@@ -23,31 +23,30 @@ markdown_extensions:
 nav:
   - Home: index.md
   
-  - 🎓 Professional Portfolio:
+  - 🎓 Portfolio:
       - Academic Labs & Projects: portfolio/academic-labs.md
-  
-  - 🗺️ Network & Architecture:
+      
+  - 🗺️ Infrastructure & Network:
       - Topology & IP Management: network/topology.md
       - DNS & Routing: network/dns.md
-      
-  - 🖥️ Physical Infrastructure:
-      - Command-Deck: nodes/command-deck.md
-      - Mothership (Proxmox): nodes/mothership.md
-      - Holodeck: nodes/holodeck.md
-      - Escape-Pod: nodes/escape-pod.md
-      
-  - 📦 Virtualization & Services:
-      - Virtual Machines: services/vms.md
-      - Docker Containers: services/containers.md
-      
+      - Physical Nodes:
+          - Command-Deck: nodes/command-deck.md
+          - Mothership (Proxmox): nodes/mothership.md
+          - Holodeck: nodes/holodeck.md
+          - Escape-Pod: nodes/escape-pod.md
+      - Virtualization:
+          - Virtual Machines: services/vms.md
+          - Docker Containers: services/containers.md
+          
   - ⚙️ Operations & Runbooks:
-      - SRE Health Monitor (The "Glue"): operations/health-monitor.md
+      - SRE Health Monitor: operations/health-monitor.md
       - Ansible Automation: operations/ansible.md
       - Backup Strategy: operations/backups.md
       
-  - 🚨 Incident Management:
+  - 📋 SRE Management:
+      - Task List (ToDos): todos/tasks.md
       - Incident Log: incidents/log.md
       - Active Known Issues: incidents/known-issues.md
-      
-  - 📋 Project Planning:
-      - Task List (ToDos): todos/tasks.md
+      - DR Drill (VM666): incidents/dr-drill-vm666.md
+extra_css:
+  - stylesheets/custom.css
