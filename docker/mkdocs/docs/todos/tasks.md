@@ -35,9 +35,9 @@
     * [x] **Deploy Reverse Proxy:** Install Nginx Proxy Manager or Traefik.
     * [x] **Route the Lab:** Map IPs like `192.168.42.42:8000` to clean URLs like `wiki.kramer.local`.
 
-* [ ] **Phase 8: Identity & Access (Single Sign-On)**
-    * [ ] **Deploy SSO Provider:** Spin up Authelia or Authentik.
-    * [ ] **Integrate with Proxy:** Lock your web dashboards behind the SSO portal utilizing your Bitwarden credentials and 2FA.
+* [X] **Phase 8: Identity & Access (Single Sign-On)**
+    * [X] **Deploy SSO Provider:** Spin up Authelia or Authentik.
+    * [X] **Integrate with Proxy:** Lock your web dashboards behind the SSO portal utilizing your Bitwarden credentials and 2FA.
 
 * [ ] **Phase 9: The GRC Simulation (Vulnerability Scanning)**
     * [ ] **Deploy the Scanner:** Install Wazuh or Greenbone (OpenVAS).
