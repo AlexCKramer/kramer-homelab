@@ -1,0 +1,14 @@
+http:
+  routers:
+    pihole2:
+      rule: "Host(`pihole2.kramer.local`)"
+      service: "pihole2-svc"
+      middlewares:
+        - "authentik@docker"
+
+  services:
+    pihole2-svc:
+      loadBalancer:
+        servers:
+          # This points Traefik physically across your network to the Escape Pod
+          - url: "http://192.168.42.6:80"
