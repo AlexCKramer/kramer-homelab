@@ -7,6 +7,14 @@ services:
       - "53:53/udp"
       # We are moving the web UI to 8080 so Traefik can have Port 80 later
       - "8080:80/tcp" 
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pihole1.rule=Host(`pihole1.kramer.local`)"
+      - "traefik.http.services.pihole1.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.pihole1.middlewares=authentik@docker"
     environment:
       - TZ=America/New_York
       - FTLCONF_webserver_api_password=${PIHOLE_WEBPASSWORD}
@@ -15,3 +23,6 @@ services:
       - './etc-pihole:/etc/pihole'
       - './etc-dnsmasq.d:/etc/dnsmasq.d'
     restart: unless-stopped
+networks:
+  proxy:
+    external: true
