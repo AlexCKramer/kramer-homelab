@@ -1,6 +1,6 @@
 services:
   watchtower:
-    image: containrrr/watchtower
+    image: nickfedor/watchtower
     container_name: watchtower
     volumes:
       # This socket mount is what allows Watchtower to "see" your other containers
