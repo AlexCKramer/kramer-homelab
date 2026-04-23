@@ -13,8 +13,8 @@ load_dotenv()
 WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
 ALERT_COOLDOWN_SECONDS = 3600  # 1 hour cooldown per server
 
-# Connect to the Redis Cache on Infra-Services
-cache = redis.Redis(host='192.168.42.42', port=6379, decode_responses=True)
+# Connect to the local Escape Pod Redis Cache
+cache = redis.Redis(host='127.0.0.1', port=6379, decode_responses=True)
 
 SERVERS = {
     "Infra-Services": "192.168.42.42",
