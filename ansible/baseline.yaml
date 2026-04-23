@@ -26,6 +26,30 @@
       ufw:
         rule: allow
         name: OpenSSH
+    # --- PHASE 9 SECURITY AUDIT MITIGATIONS ---
+
+    - name: Disable TCP Timestamps (Mitigate Information Disclosure)
+      sysctl:
+        name: net.ipv4.tcp_timestamps
+        value: '0'
+        state: present
+        sysctl_set: yes
+        reload: yes
+
+    - name: Harden SSH MAC algorithms (Disable umac-64)
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^#?MACs '
+        line: 'MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256'
+        state: present
+        validate: /usr/sbin/sshd -t -f %s
+      notify: restart ssh
+
+  handlers:
+    - name: restart ssh
+      service:
+        name: ssh
+        state: restarted
 
     # SRE SAFETY HOLD: 
     # We are installing UFW, but we are intentionally NOT enabling it yet.

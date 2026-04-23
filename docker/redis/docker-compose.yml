@@ -4,7 +4,7 @@ services:
     container_name: redis
     restart: unless-stopped
     ports:
-      - "6379:6379"
+      - "127.0.0.1:6379:6379" # Bind to localhost for security
     volumes:
       # This ensures your data survives if the container restarts
       - ./data:/data
