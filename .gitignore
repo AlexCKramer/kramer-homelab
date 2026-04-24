@@ -16,3 +16,4 @@
 .git-credentials
 *.pem
 *.rsa
+trivy-report*
