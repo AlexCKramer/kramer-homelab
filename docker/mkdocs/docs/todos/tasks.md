@@ -2,23 +2,23 @@
 
 * [x] **Phase 1: The Foundation (Documentation-as-Code)**
     * [x] **Deploy MkDocs-Material via Docker:** Set up the container on `Infra-Services`.
-    * [x] **Initialize Git Repository:** Move your notes from Obsidian into the `docs/` folder and perform your first `git commit`.
-    * [x] **Create the "Incident Log":** Build a section specifically for documenting hardware failures or configuration errors you've solved.
+    * [x] **Initialize Git Repository:** Move notes from Obsidian into the `docs/` folder and perform first `git commit`.
+    * [x] **Create the "Incident Log":** Build a section specifically for documenting hardware failures or configuration errors that have been solved.
 
 * [x] **Phase 2: Observability (Monitoring & Metrics)**
-    * [x] **Install Node Exporter:** Deploy this to your Proxmox hosts (`MOTHERSHIP` and `HOLODECK`) to pull hardware telemetry.
+    * [x] **Install Node Exporter:** Deploy this to Proxmox hosts (`MOTHERSHIP` and `HOLODECK`) to pull hardware telemetry.
     * [x] **Deploy Prometheus & Grafana:** Set up the stack in Portainer.
     * [x] **Build the Cluster Dashboard:** Create a single pane of glass showing CPU, RAM, and Network usage for the entire lab.
 
 * [x] **Phase 3: Infrastructure-as-Code (Lifecycle Automation)**
     * [x] **Setup Ansible:** Install Ansible on `Command-Deck` or `Infra-Services`.
-    * [x] **Create the "Baseline" Playbook:** Write a script to automate `unattended-upgrades` and security hardening (UFW) across all your Debian/Ubuntu VMs.
-    * [x] **Deploy Watchtower:** Automate your Docker container updates with specific "opt-out" labels for critical services.
+    * [x] **Create the "Baseline" Playbook:** Write a script to automate `unattended-upgrades` and security hardening (UFW) across all Debian/Ubuntu VMs.
+    * [x] **Deploy Watchtower:** Automate Docker container updates with specific "opt-out" labels for critical services.
 
 * [x] **Phase 4: Targeted SRE Skills (Python & NoSQL)**
-    * [x] **Write the "Health Check" Python Script:** Build a script that pings your game servers and notifies you (via Discord or email) if they go offline.
+    * [x] **Write the "Health Check" Python Script:** Build a script that pings game servers and notifies (via Discord or email) if they go offline.
     * [x] **Deploy Redis:** Spin up a Redis container to understand how Key-Value stores handle data.
-    * [x] **Document the "Glue":** Use MkDocs to explain how your Python script interacts with your services.
+    * [x] **Document the "Glue":** Use MkDocs to explain how Python script interacts with services.
 
 * [x] **Phase 5: Reliability Validation (Disaster Recovery)**
     * [x] **Build the "Sacrificial VM":** Create a small test VM on `MOTHERSHIP`.
@@ -39,11 +39,11 @@
     * [X] **Deploy SSO Provider:** Spin up Authelia or Authentik.
     * [X] **Integrate with Proxy:** Lock your web dashboards behind the SSO portal utilizing your Bitwarden credentials and 2FA.
 
-* [ ] **Phase 9: The GRC Simulation (Vulnerability Scanning)**
-    * [ ] **Deploy the Scanner:** Install Wazuh or Greenbone (OpenVAS).
-    * [ ] **Execute the Audit:** Run a credentialed vulnerability scan against `Command-Deck` or `Infra-Services`.
-    * [ ] **Generate the Artifact:** Export the PDF report showing vulnerabilities (e.g., Outdated SSH, missing patches).
-    * [ ] **Write the Mitigation Post-Mortem:** Document in MkDocs exactly how you mitigated those risks using your Ansible playbooks.
+* [x] **Phase 9: The GRC Simulation (Vulnerability Scanning)**
+    * [x] **Deploy the Scanner:** Install Wazuh or Greenbone (OpenVAS).
+    * [x] **Execute the Audit:** Run a credentialed vulnerability scan against `Command-Deck` or `Infra-Services`.
+    * [x] **Generate the Artifact:** Export the PDF report showing vulnerabilities (e.g., Outdated SSH, missing patches).
+    * [x] **Write the Mitigation Post-Mortem:** Document in MkDocs exactly how you mitigated those risks using your Ansible playbooks.
 
 * [ ] **Phase 10: Application Orchestration (Game Server Control Plane)**
     * [ ] **Deploy the Control Plane:** Install Pterodactyl Panel (or PufferPanel) on `Infra-Services` to act as the central web UI and database.
