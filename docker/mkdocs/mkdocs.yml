@@ -49,8 +49,8 @@ nav:
       - Active Known Issues: incidents/known-issues.md
       - DR Drill (VM666): incidents/dr-drill-vm666.md
       - Architecture Decisions:
-          - ADR 001 - Routing & Proxy: incidents/adr-001-internal-routing.md
-          - ADR 002 - Identity & SSO: incidents/adr-002-sso-risk-acceptance.md
-          - ADR 003 - Scanning Pivot: incidents/adr-003-wazuh-pivot.md
+          - ADR 001 - Routing & Proxy: incidents/adr-001-interal-dns-and-reverse-proxy.md
+          - ADR 002 - Identity & SSO: incidents/adr-002-sso.md
+          - ADR 003 - Scanning Pivot: incidents/adr-003-vulnerability-scanning.md
 extra_css:
   - stylesheets/custom.css
